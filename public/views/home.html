@@ -1,0 +1,26 @@
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <angucomplete-alt id="ex1"
+                      placeholder="Type to search images"
+                      pause="100"
+                      selected-object="afterSelect"
+                      local-data="categories"
+                      search-fields="name"
+                      title-field="display_name"
+                      minlength="1"
+                      input-class="form-control form-control-small"/>
+            </div>
+        </div>
+        <div class="row row-content top-buffer">
+            <div class="col-sm-12">
+                    <ul class="dynamic-grid" angular-grid="images" grid-width="300" gutter-size="10" angular-grid-id="gallery" refresh-on-img-load="false"> 
+                        <li data-ng-repeat="image in images" class="grid" data-ng-clock>
+                            <a data-ng-href="{{ image.download_url }}"> 
+                                <img src="{{image.download_url}}" class="grid-img" data-actual-width = "{{image.width}}"  data-actual-height="{{image.height}}"/>
+                            </a>
+                        </li>
+                    </ul>
+            </div>
+        </div>
+    </div>
